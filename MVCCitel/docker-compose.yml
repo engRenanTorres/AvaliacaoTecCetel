@@ -2,7 +2,7 @@ version: "3"
 
 services:
   db:
-    build: .docker/postgres
+    build: .docker/postgre
     container_name: citel-db
     restart: always
     tty: true

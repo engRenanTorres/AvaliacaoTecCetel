@@ -59,20 +59,43 @@ Deploy
 - [ ] Devidas instruções, via git BitBucket ou GitHubs;
 - [ ] Enviar o link ou compactar e enviar via e-mail.
 
+## Pré-requisitos
+
+Para rodar este programa é necessário ter .net sdk, git, docker e docker-compose instalados. 
+
 ## Instalação
 
-Download do app pelo git
+Download do app pelo git:
 
 ```bash
 $ git clone https://github.com/engRenanTorres/AvaliacaoTecCetel.git
 ```
+Para rodar a migrações você precisar instalar o donet-ef.
+Portanto, abra o terminal e digite o seguinte comando:
+```bash
+$ dotnet tool install --global dotnet-ef
+```
+Será preciso rodar as migrações para criar as tabelas e o Banco de dados.
 
-Instruções sobre dados iniciais e portas dos apps
+Relembre de verificar se portas 5432 e 8000 do pc estão livres e rode o comando abaixo na mesma pasta onde está o arquivo docker-compose.yml
 
 ```bash
-$ docker-compose up --build
+$ docker-compose up --build db pgadmin
 ```
-* É possível que dê erro na ao rodar pela primeira vez, pois o app pode subir enquanto o banco de dados ainda está carregando as informações iniciais.
+Espere o processo terminar e rode as migrações. Entre na pasta do projeto \MVCCitel\MVCCitel e cole o comando:
+```bash
+$ dotnet ef database update
+```
+* O ideal é subir só o bd primeiro. Pois, é possível que dê erro na ao rodar pela primeira vez, pois o app pode subir enquanto o banco de dados ainda está carregando as informações iniciais.
+
+
+## Acesso PGADMIN
+Se quiser verificar o banco de dados. Acesse o Pgadmin em localhost:8000
+
+O Pgadmin pede login, você pode acessá-lo com:
+
+Usuário: admin@admin.com
+Senha: admin
 
 ## Rodando o app
 
