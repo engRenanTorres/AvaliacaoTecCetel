@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MVCCitel.Models;
+using MVCCitel.Models.Domain;
 
 namespace MVCCitel.Data
 {

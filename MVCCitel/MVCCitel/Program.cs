@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using MVCCitel.Data;
+using MVCCitel.Data.Repositories;
+using MVCCitel.Services;
+using MVCCitel.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +11,13 @@ builder.Services.AddControllersWithViews();
 builder.Services
   .AddEntityFrameworkNpgsql()
   .AddDbContext<DataContextEF>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
+// Services dependencies injection
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+//builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+//builder.Services.AddScoped<IQuestionService, QuestionService>();
 
 
 var app = builder.Build();
