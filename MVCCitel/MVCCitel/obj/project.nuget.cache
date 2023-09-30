@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "uJHa9eUIaeDJhb5k9i1Gvtd3VrkyYnrzLYyGGJ7N0Aof6BQviJmoJIUkSglRpDa8j9OYTi9A0wZAO8H1u4gsAw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\renst\\Desktop\\c#\\AvaliacaoTecCitelRenan\\MVCCitel\\MVCCitel\\MVCCitel.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\renst\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512"
+  ],
+  "logs": []
+}
