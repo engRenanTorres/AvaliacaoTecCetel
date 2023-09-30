@@ -1,1 +1,133 @@
 Free Template bootstrap from https://startbootstrap.com/template/sb-admin#google_vignette
+
+# Candidato Dev. Renan Torres
+
+Trabalho do [Renan Torres](https://www.linkedin.com/in/eng-renan-torres/) para o processo seletivo da Citel Software na vaga de Desenvolvedor Full Stack (.Net Core) - Home Office.
+## Tecnologias
+
+<img align="center" alt=".NET" src="https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white"/>
+<img align="center" alt="mySQL" src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white"/>
+<img align="center" alt="docker" src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white"/>
+
+## Descrição
+
+Teste do processo seletivo para vaga de Desenvolvedor Full Stack (.Net Core) - Home Office na [Citel Software](https://www.citelsoftware.com.br/).
+## Pré-requisitos
+
+Para rodar o app é preciso ter o [Docker](https://docs.docker.com/engine/install/) e o seu pluguin [Docker-compose](https://docs.docker.com/compose/install/).
+
+Verifique se as portas 3000, 5432 e 8000 da sua máquina estão liberadas. O app irá rodar na 3000, o BD(Postgrees) na 5432 e o pgadmin na 8000.
+*Caso necessite trocar o número das portas, altere-as no arquivo 'docker-compose.yml'.
+
+## Lista dos Desafios Propostos pelo processo seletivo
+
+Prazo: 
+- [ ] 5 dias corridos. Data final: 23:59 de 04/10/2023;
+
+Banco de Dados:
+- [ ] Atividade 1: Criação das entidades de Produto e Categoria;
+
+Backend
+- [ ] Atividade 2: Criação de Web API MVC ASP NET Core, com CRUD para:
+        Api de Produtos e 
+        Api de Categorias.
+- [ ] Atividade 3: Consumir o banco de dados criado;
+- [ ] Extra 1: Estruturação de Código;
+- [ ] Extra 2: Qualidade de Escrita;
+- [X] Extra 3: Uso de Pattern;
+
+        [X] Extra 3.1: MVC Pattern; 
+
+        [X] Extra 3.2: Repositorie Pattern; 
+- [ ] Extra 4: Micro Serviços;
+- [ ] Extra 5: Injeção de Dependência;
+- [ ] Extra 6: Swagger;
+- [ ] *Bônus*: Test Driven Development; 
+- [X] *Bônus*: Containers Docker; 
+
+
+Frontend
+- [ ] Atividade 4: Criação de WEB APPLICATION consumindo as WEB APIs com os respectivos CRUDS:
+        Produtos e 
+        Categorias;
+- [ ] Ativedade 5: Uso de Bootstrap com visual agradável;
+- [ ] Extra: UX;
+
+Deploy
+- [x] Versionar os códigos fontes criados;
+- [x] Estrutura/script do banco de dados;
+- [ ] Devidas instruções, via git BitBucket ou GitHubs;
+- [ ] Enviar o link ou compactar e enviar via e-mail.
+
+## Instalação
+
+Download do app pelo git
+
+```bash
+$ git clone https://github.com/engRenanTorres/AvaliacaoTecCetel.git
+```
+
+Instruções sobre dados iniciais e portas dos apps
+
+```bash
+$ docker-compose up --build
+```
+* É possível que dê erro na ao rodar pela primeira vez, pois o app pode subir enquanto o banco de dados ainda está carregando as informações iniciais.
+
+## Rodando o app
+
+Pode utilizar as apis pela própria documentação swagger.
+
+Siga a documentação para rodar a API. Coloquei os nomes sugeridos para evitar conflitos.
+```bash
+# development
+# A documentação ficará disponível em localhost:3000/api-docs
+# Pode gerenciar o bd pelo phpmyadmin pelo localhost:8081
+# usuario root senha dbcitel
+```
+## Rodando o app fora do container
+
+Se preferir, você pode rodar o app fora do container.
+
+Primeiro você terá que alterar no arquivo .env, comentando o endereço do banco de dados. 
+
+Em seguida, no mesmo arquivo, descomente o endereço do banco de dados com o localhost.
+
+Para isso, utilize os seguintes comandos:
+```bash
+npm i
+npm run build
+npm -r nome_modules
+npm i --omit=dev #instala apenas os pacotes de produção.
+npx prisma generate #para rodar as migrations iniciais e gerar as tabelas iniciais
+npm run start
+```
+
+Pode utilizar as apis pela própria documentação swagger.
+
+O arquivo de boletos em csv enviado pelo síndico se encontra na raís do projeto com nome de boletos.csv
+
+O arquivo de boletos em pdf enviado pelo síndico se encontra na raís do projeto com nome de boletos.pdf
+
+Os arquivos pdf salvos ficam na pasta uploads/boletos
+
+Siga a documentação para rodar o API. Coloquei os nomes sugeridos para evitar conflitos.
+```bash
+# development
+# A documentação ficará disponível em localhost:3000/api-docs
+# Pode gerenciar o bd pelo prisma client em localhost:5555
+# ou pelo phpmyadmin pelo localhost:8081
+# usuario root senha dbgreen
+```
+
+## Testes
+
+```bash
+# em andamento
+```
+
+## Suporte
+
+Só me procurar [meu linkedin](https://www.linkedin.com/in/eng-renan-torres/).
+
+## Stay in touch
