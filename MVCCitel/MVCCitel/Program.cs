@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using MVCCitel.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services
+  .AddEntityFrameworkNpgsql()
+  .AddDbContext<DataContextEF>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 var app = builder.Build();
 
@@ -23,5 +30,18 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+var scope = app.Services.CreateScope();
+var services = scope.ServiceProvider;
+/*try
+{
+    var context = services.GetRequiredService<DataContextEF>();
+    context.Database.Migrate();
+}
+catch (Exception ex)
+{
+    var logger = services.GetRequiredService<ILogger<Program>>();
+    logger.LogError(ex,"An error occured during migration.");
+}*/
 
 app.Run();
