@@ -16,7 +16,6 @@ dbdata
 obj/
 Debug/
 net7.0
-MVCCitel
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
