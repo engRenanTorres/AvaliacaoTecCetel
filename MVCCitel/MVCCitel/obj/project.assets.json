@@ -5732,26 +5732,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\renst\\.nuget\\packages\\": {}
+    "/Users/renandesouza/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\renst\\Desktop\\c#\\AvaliacaoTecCitelRenan\\MVCCitel\\MVCCitel\\MVCCitel.csproj",
+      "projectUniqueName": "/Users/renandesouza/dev/dotnet/AvaliacaoTecCitel/MVCCitel/MVCCitel/MVCCitel.csproj",
       "projectName": "MVCCitel",
-      "projectPath": "C:\\Users\\renst\\Desktop\\c#\\AvaliacaoTecCitelRenan\\MVCCitel\\MVCCitel\\MVCCitel.csproj",
-      "packagesPath": "C:\\Users\\renst\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\renst\\Desktop\\c#\\AvaliacaoTecCitelRenan\\MVCCitel\\MVCCitel\\obj\\",
+      "projectPath": "/Users/renandesouza/dev/dotnet/AvaliacaoTecCitel/MVCCitel/MVCCitel/MVCCitel.csproj",
+      "packagesPath": "/Users/renandesouza/.nuget/packages/",
+      "outputPath": "/Users/renandesouza/dev/dotnet/AvaliacaoTecCitel/MVCCitel/MVCCitel/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\renst\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/renandesouza/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "/usr/local/share/dotnet/sdk/7.0.306/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5818,7 +5817,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.306/RuntimeIdentifierGraph.json"
       }
     }
   }
