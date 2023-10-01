@@ -22,7 +22,7 @@ Verifique se as portas 49157, 5432 e 8000 da sua máquina estão liberadas. O ap
 ## Lista dos Desafios Propostos pelo processo seletivo
 
 Prazo: 
-- [ ] 5 dias corridos. Data final: 23:59 de 04/10/2023;
+- [X] 5 dias corridos. Data final: 23:59 de 04/10/2023;
 
 Banco de Dados:
 - [X] Atividade 1: Criação das entidades de Produto e Categoria;
@@ -31,18 +31,18 @@ Backend
 - [ ] Atividade 2: Criação de Web API MVC ASP NET Core, com CRUD para:
         Api de Produtos e 
         Api de Categorias.
-- [ ] Atividade 3: Consumir o banco de dados criado;
-- [ ] Extra 1: Estruturação de Código;
-- [ ] Extra 2: Qualidade de Escrita;
+- [X] Atividade 3: Consumir o banco de dados criado;
+- [X] Extra 1: Estruturação de Código;
+- [X] Extra 2: Qualidade de Escrita;
 - [X] Extra 3: Uso de Pattern;
 
         [X] Extra 3.1: MVC Pattern; 
 
         [X] Extra 3.2: Repositorie Pattern; 
 - [ ] Extra 4: Micro Serviços;
-- [ ] Extra 5: Injeção de Dependência;
+- [X] Extra 5: Injeção de Dependência;
 - [ ] Extra 6: Swagger;
-- [ ] *Bônus*: Test Driven Development; 
+- [X] *Bônus*: Test Driven Development; 
 - [X] *Bônus*: Containers Docker; 
 
 
@@ -50,14 +50,14 @@ Frontend
 - [ ] Atividade 4: Criação de WEB APPLICATION consumindo as WEB APIs com os respectivos CRUDS:
         Produtos e 
         Categorias;
-- [ ] Ativedade 5: Uso de Bootstrap com visual agradável;
+- [X] Ativedade 5: Uso de Bootstrap com visual agradável;
 - [ ] Extra: UX;
 
 Deploy
 - [x] Versionar os códigos fontes criados;
 - [x] Estrutura/script do banco de dados;
 - [X] Devidas instruções, via git BitBucket ou GitHubs;
-- [ ] Enviar o link ou compactar e enviar via e-mail.
+- [X] Enviar o link ou compactar e enviar via e-mail.
 
 ## Pré-requisitos
 
