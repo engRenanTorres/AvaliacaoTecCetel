@@ -1,4 +1,4 @@
-﻿@model MVCCitel.Models.UpdateCategoryViewModel
+﻿@model MVCCitel.Models.UpdateProductViewModel
 @{
 }
 
@@ -33,6 +33,18 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
+                                                <input class="form-control" asp-for="Price" id="inputPrice" type="text"  />
+                                                <label for="inputPrice" >Preço</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input class="form-control" asp-for="CategoryId" id="inputCategoryId" type="text"  />
+                                                <label for="inputCategoryId" >ID da Categoria</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
                                                 <input class="form-control" asp-for="CreatedAt" id="inputDate" type="date" readonly />
                                                 <label for="inputDate" >Criado em</label>
                                             </div>
@@ -44,7 +56,7 @@
                                         <button type="submit" class="btn btn-primary">Editar</button>
                                     </div>
                                     <div class="mt-4 mb-0">
-                                        <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Category">Delete</button>
+                                        <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Product">Delete</button>
                                     </div>
                                 </form>
                             </div>

@@ -39,17 +39,18 @@ namespace MVCCitel.Controllers
                 };
                 return await Task.Run(()=>View("View",viewModel));
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Server500","Error");
 
         }
         
         [HttpPost]
         public async Task<IActionResult> View(UpdateCategoryViewModel model)
         {
+
             var category = await _categoryService.GetCategory(model.Id);
             if(category == null)
             {
-                return RedirectToAction("Index"); //TODO redirect to to error page
+                return RedirectToAction("Server500","Error");
             }
             var updateDTO = new UpdateCategoryDTO{
                 Name = model.Name,
@@ -68,7 +69,7 @@ namespace MVCCitel.Controllers
                await _categoryService.DeleteCategory(category.Id);
                return RedirectToAction("Index");
             }
-            return RedirectToAction("Index"); //TODO redirect to to error page
+            return RedirectToAction("Server500","Error");
         }
         
         [HttpGet]
@@ -79,11 +80,11 @@ namespace MVCCitel.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(CreateCategoryDTO createCategoryDTO)
         {
-            if (createCategoryDTO == null) return RedirectToAction("Index"); //TODO redirect to to error page;
+            if (createCategoryDTO == null) return RedirectToAction("Index"); // TODO redirect to proper error page;
             Category? category = await _categoryService.CreateCategory(createCategoryDTO);
             return category != null ?
                 RedirectToAction("Add") :
-                RedirectToAction("Index"); //TODO redirect to to error page
+                RedirectToAction("Server500","Error");
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model MVCCitel.DTOs.CreateCategoryDTO
+﻿@model MVCCitel.DTOs.CreateProductDTO
 @{
 }
 
@@ -9,7 +9,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-7">
                         <div class="card shadow-lg border-0 rounded-lg mt-5">
-                            <div class="card-header"><h3 class="text-center font-weight-light my-4">Crie a Categoria</h3></div>
+                            <div class="card-header"><h3 class="text-center font-weight-light my-4">Crie o novo Produto</h3></div>
                             <div class="card-body">
                                 <form method="post" action="Add">
                                     <div class="row mb-3">
@@ -23,6 +23,18 @@
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="inputDescription" asp-for="Description">
                                                 <label for="inputDescription" >Descrição</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="number" class="form-control" id="inputPrice" asp-for="Price">
+                                                <label for="inputPrice" >Preço</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input required type="number" class="form-control" id="inputIdCategory" asp-for="CategoryId">
+                                                <label for="inputIdCategory" >Id da Categoria</label>
                                             </div>
                                         </div>
                                     </div>

@@ -1,20 +1,20 @@
-﻿@model List<MVCCitel.Models.Domain.Category>
+﻿@model List<MVCCitel.Models.Domain.Product>
 @{
 }
 
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Lista de Categorias</h1>
+            <h1 class="mt-4">Lista de Produtos</h1>
             <div class="card mb-4">
                 <div class="card-header">
                     <div class="container-fluid px-4">
                         <div class="row">
                             <div class="col-md-6">
                                 <i class="fas fa-table me-1"></i>
-                                Categorias
+                                Produtos
                             </div>
                             <div class="col-md-6 text-end">
-                                <button class="btn btn-primary" asp-area="" asp-controller="Category" asp-action="Add"><i class="fas fa-plus me-1"></i> Nova Categoria</button>       
+                                <button class="btn btn-primary" asp-area="" asp-controller="Product" asp-action="Add"><i class="fas fa-plus me-1"></i> Nova Categoria</button>       
                             </div>
                         </div>
                     </div>
@@ -26,7 +26,9 @@
                                 <th>Id</th>
                                 <th>Nome</th>
                                 <th>Descrição</th>
-                                <th>Criada em</th>
+                                <th>Preço</th>
+                                <th>Categoria</th>
+                                <th>Criado em</th>
                                 <th>Editar</th>
                             </tr>
                         </thead>
@@ -35,7 +37,9 @@
                                 <th>Id</th>
                                 <th>Nome</th>
                                 <th>Descrição</th>
-                                <th>Criada em</th>
+                                <th>Preço</th>
+                                <th>Categoria</th>
+                                <th>Criado em</th>
                                 <th>Editar</th>
                             </tr>
                         </tfoot>
@@ -46,8 +50,10 @@
                                     <td>@category.Id</td>
                                     <td>@category.Name</td>
                                     <td>@category.Description</td>
+                                    <td>@category.Price</td>
+                                    <td>@category.Category?.Name</td>
                                     <td>@category.CreatedAt.ToString("dd/MM/yyyy")</td>
-                                    <td><a href="Category/View/@category.Id"><i class="fas fa-edit me-1"></i> </a></td>
+                                    <td><a href="Product/View/@category.Id"><i class="fas fa-edit me-1"></i> </a></td>
                                 </tr>
                             }
                         </tbody>

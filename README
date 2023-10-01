@@ -42,7 +42,7 @@ Backend
 - [ ] Extra 4: Micro Serviços;
 - [X] Extra 5: Injeção de Dependência;
 - [ ] Extra 6: Swagger;
-- [X] *Bônus*: Test Driven Development; 
+- [X] *Bônus*: Testes unitários nas regras de negócio; 
 - [X] *Bônus*: Containers Docker; 
 
 

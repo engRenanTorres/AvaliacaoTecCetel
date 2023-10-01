@@ -15,9 +15,9 @@ builder.Services
 
 // Services dependencies injection
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-//builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
-//builder.Services.AddScoped<IQuestionService, QuestionService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 
 var app = builder.Build();
