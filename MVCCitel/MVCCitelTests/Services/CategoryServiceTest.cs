@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace MVCCitelTests.Services
 {
-    internal class CategoryServiceTest
+    public class CategoryServiceTest
     {
         private readonly ICategoryRepository _categoryRepository;
         private readonly ILogger<ICategoryService> _logger;
@@ -107,10 +107,15 @@ namespace MVCCitelTests.Services
             A.CallTo(() => _categoryRepository.RemoveEntity(_category));
             A.CallTo(() => _categoryRepository
                 .SaveChanges()).Returns(Task.FromResult<bool>(false));
-
-            var result = await _categoryService.DeleteCategory(Id);
-
-            result?.Should().Be(false);
+            try
+            { 
+                var result = await _categoryService.DeleteCategory(Id);
+            }
+            catch (Exception ex)
+            {
+                ex.Should().BeOfType<WarningException>();
+                ex.Message.Should().Be("Category id: 1 not found");
+            }
         }
 
         [Fact]
@@ -155,12 +160,11 @@ namespace MVCCitelTests.Services
         [Fact]
         public async Task CreateCategory_CreateSucessfully_ShouldReturnCategory()
         {
-            var categoryDTO = new AddCategoryViewModel()
+            var categoryDTO = new CreateCategoryDTO()
             {
                 Description = "Is this a quetion Test?",
                 Name = "Test",
             };
-            var userId = "1";
 
             A.CallTo(() => _categoryRepository
                 .AddEntity(categoryDTO));

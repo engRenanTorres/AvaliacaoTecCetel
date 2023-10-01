@@ -20,15 +20,29 @@ namespace MVCCitel.Controllers
             _categoryService = categoryService;
         }
         [HttpGet]
+        public async Task<IActionResult> Index()
+        {
+            var categories = await _categoryService.GetAllCategories();
+            return View( categories );
+    
+        }
+        [HttpGet]
+        public async Task<IActionResult> View(int id)
+        {
+            var category = await _categoryService.GetCategory(id);
+            return View(category);
+
+        }
+        [HttpGet]
         public IActionResult Add()
         {
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Add(AddCategoryViewModel addCategoryRequest)
+        public async Task<IActionResult> Add(CreateCategoryDTO createCategoryDTO)
         {
-            if (addCategoryRequest == null) return BadRequest("Question data is null.");
-            Category? category = await _categoryService.CreateCategory(addCategoryRequest);
+            if (createCategoryDTO == null) return BadRequest("Question data is null.");
+            Category? category = await _categoryService.CreateCategory(createCategoryDTO);
             return category != null ?
                 RedirectToAction("Add") :
                 BadRequest("Category has Not been Created");

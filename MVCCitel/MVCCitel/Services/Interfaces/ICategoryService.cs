@@ -7,7 +7,7 @@ namespace MVCCitel.Services.Interfaces
 {
     public interface ICategoryService
     {
-        Task<Category?> CreateCategory(AddCategoryViewModel categoryDTO);
+        Task<Category?> CreateCategory(CreateCategoryDTO categoryDTO);
         Task<Category?> GetCategory(int id);
         Task<IEnumerable<Category?>> GetAllCategories();
         Task<Category> PatchCategory(int id, [FromBody] UpdateCategoryDTO updateCategoryDTO);

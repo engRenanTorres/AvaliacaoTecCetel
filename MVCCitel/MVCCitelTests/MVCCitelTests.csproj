@@ -28,4 +28,8 @@
     <ProjectReference Include="..\MVCCitel\MVCCitel.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>

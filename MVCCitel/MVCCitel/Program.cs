@@ -43,7 +43,7 @@ app.MapControllerRoute(
 
 var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
-/*try
+try
 {
     var context = services.GetRequiredService<DataContextEF>();
     context.Database.Migrate();
@@ -52,6 +52,6 @@ catch (Exception ex)
 {
     var logger = services.GetRequiredService<ILogger<Program>>();
     logger.LogError(ex,"An error occured during migration.");
-}*/
+}
 
 app.Run();

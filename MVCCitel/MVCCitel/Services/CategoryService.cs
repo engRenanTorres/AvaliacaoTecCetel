@@ -21,7 +21,7 @@ namespace MVCCitel.Services
             _logger = logger;
             _categoryRepository = repository;
         }
-        async public Task<Category?> CreateCategory(AddCategoryViewModel categoryDTO)
+        async public Task<Category?> CreateCategory(CreateCategoryDTO categoryDTO)
         {
             _logger.LogInformation("CreateCategory has been called.");
 
