@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using MVCCitel.DTOs;
 using MVCCitel.Models;
 using MVCCitel.Models.Domain;
@@ -10,14 +11,17 @@ namespace MVCCitel.Controllers
     {
         private readonly ILogger<ProductController> _logger;
         private readonly IProductService _productService;
+        private readonly ICategoryService _categoryService;
 
         public ProductController(
           ILogger<ProductController> logger,
-          IProductService productService
+          IProductService productService,
+          ICategoryService categoryService
         )
         {
             _logger = logger;
             _productService = productService;
+            _categoryService = categoryService;
         }
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -57,11 +61,20 @@ namespace MVCCitel.Controllers
                     Name = product.Name,
                     Description = product.Description,
                     Price = product.Price,
-                    CategoryId = product.CategoryId,
             };
-            await _productService.PatchProduct(model.Id, updateDTO);
+            try 
+            {
+                await _productService.PatchProduct(model.Id, updateDTO);
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            } 
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+                return RedirectToAction("Server500","Error");
+            }
+
         }
         [HttpPost]
         public async Task<IActionResult> Delete(UpdateProductViewModel model)
@@ -76,9 +89,15 @@ namespace MVCCitel.Controllers
         }
         
         [HttpGet]
-        public IActionResult Add()
+        public async Task<IActionResult> Add()
         {
-            return View();
+            var categories = await _categoryService.GetAllCategories(); // Substitua pelo método correto para obter suas categorias
+            var viewModel = new AddProductViewModel
+            {
+                Categories = categories.Select(c => new SelectListItem { Value = c?.Id.ToString(), Text = c?.Name }).ToList()
+            };
+
+            return View(viewModel);
         }
         [HttpPost]
         public async Task<IActionResult> Add(CreateProductDTO createProductDTO)

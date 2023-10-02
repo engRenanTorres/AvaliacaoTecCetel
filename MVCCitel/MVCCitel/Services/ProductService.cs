@@ -73,16 +73,17 @@ namespace MVCCitel.Services
             return products;
         }
 
-        async public Task<Product> PatchProduct(int id, [FromBody] UpdateProductDTO updateProductDTO)
+        async public Task<Product> PatchProduct(int id, UpdateProductDTO updateProductDTO)
         {
+            Console.WriteLine("id: " + id);
+            Console.WriteLine("id: " + updateProductDTO.Name);
             _logger.LogInformation("Patch ProductService has been called.");
             Product product =
               await _productRepository.GetSingleProduct(id)
               ?? throw new WarningException("Product id: " + id + " not found");
-
+            Console.WriteLine("id2: " + product.CategoryId);
             if (updateProductDTO.Name != null) product.Name = updateProductDTO.Name;
             if (updateProductDTO.Description != null) product.Description = updateProductDTO.Description;
-
             if (await _productRepository.SaveChanges())
             {
                 _logger.LogInformation("Patch ProductService has updated product successfully.");

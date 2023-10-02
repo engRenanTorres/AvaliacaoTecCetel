@@ -1,4 +1,4 @@
-﻿@model MVCCitel.DTOs.CreateProductDTO
+﻿@model MVCCitel.Models.AddProductViewModel
 @{
 }
 
@@ -33,12 +33,18 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input required type="number" class="form-control" id="inputIdCategory" asp-for="CategoryId">
-                                                <label for="inputIdCategory" >Id da Categoria</label>
+                                                <select asp-for="CategoryId" class="form-control">
+                                                    <option value="">Selecione uma categoria</option>
+                                                    @foreach (var category in Model.Categories)
+                                                    {
+                                                        <option value="@category.Value">@category.Text</option>
+                                                    }
+                                                </select>
+                                                <label for="CategoryId">Categoria</label>
                                             </div>
                                         </div>
-                                    </div>
 
+                                    </div>
                                     
                                     <div class="mt-4 mb-0">
                                         <button type="submit" class="btn btn-primary">Salvar</button>
